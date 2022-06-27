@@ -15,5 +15,9 @@
   "bugs": {
     "url": "https://github.com/sahdev50/node_express/issues"
   },
-  "homepage": "https://github.com/sahdev50/node_express#readme"
+  "homepage": "https://github.com/sahdev50/node_express#readme",
+  "dependencies": {
+    "express": "^4.18.1",
+    "nodemon": "^2.0.18"
+  }
 }
