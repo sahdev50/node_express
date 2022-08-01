@@ -1,0 +1,9 @@
+<%- include('layouts/head.ejs')  %>
+</head>
+<body>
+    <h1>Shop Page</h1>
+    <% products.forEach(product => { %>
+        <a href="/product/<%= product.id %>"><h3><%= product.title %></h3></a>
+        <p><%= product.description %></p>
+    <% }) %>
+<%- include('layouts/tail.ejs') %>
