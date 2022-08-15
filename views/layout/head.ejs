@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles/main.css">
+    <title><%= title %> </title>
+</head>
+<body>
+    <div class="main-container" >
+        <div class="nav-bar-container">
+            <div class="nav-bar" >
+                <div class="app-symbol" >
+                    <h2><a href="/" class="<%= path === 'home' ? 'active-link' : '' %>" >Home</a></h2>
+                </div>
+                <div class="links" >
+                    <a href="/login" class="<%= path === 'login' ? 'active-link' : '' %>" >Login</a>
+                    <a href="/register" class="<%= path === 'register' ? 'active-link' : '' %>" >Register</a>
+                    <form action="/logout" method="post">
+                        <button type="submit">Logout</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="second-container" >
+            <div class="page-container" >
+        
