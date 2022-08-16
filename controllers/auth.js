@@ -4,9 +4,10 @@ const { redirect } = require('express/lib/response')
 const User = require('../models/user')
 
 exports.getRegister = (req, res, next)=>{
-    return res.render('register',{
+    return res.render('auth/register',{
         title:'Register',
         path:'register',
+        isLoggedIn:req.session.isLoggedIn
     })
 }
 
@@ -28,9 +29,10 @@ exports.postRegister = async(req, res, next)=>{
 }
 
 exports.getLogin = (req, res, next)=>{
-    return res.render('login', {
+    return res.render('auth/login', {
         title:'Login',
         path:'login',
+        isLoggedIn:req.session.isLoggedIn
     })
 }
 
@@ -56,6 +58,8 @@ exports.postLogin = (req, res, next)=>{
 }
 
 exports.postLogout = (req, res, next)=>{
+    req.session.user= null
+    req.session.isLoggedIn = false
     req.session.destroy(()=>{
         return res.redirect('/')
     })

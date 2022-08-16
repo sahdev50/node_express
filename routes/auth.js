@@ -1,6 +1,7 @@
 const express = require('express')
 
 const router = express.Router()
+const isAuth = require('../middleware/is-auth')
 
 const {getRegister, postRegister,getLogin, postLogin, postLogout} = require('../controllers/auth')
 
@@ -12,6 +13,6 @@ router.get('/login', getLogin)
 
 router.post('/login', postLogin)
 
-router.post('/logout', postLogout)
+router.post('/logout', isAuth, postLogout)
 
 module.exports = router

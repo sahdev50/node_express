@@ -16,7 +16,8 @@ const store = new mongoDBStore({
 
 const homeRouter = require('./routes/home')
 const authRouter = require('./routes/auth')
-
+const profileRouter = require('./routes/profile')
+const carsRouter = require('./routes/cars')
 // set ejs
 app.set('view engine', 'ejs')
 
@@ -32,6 +33,8 @@ app.use(session({
 
 app.use(homeRouter)
 app.use(authRouter)
+app.use(profileRouter)
+app.use(carsRouter)
 app.use('*', (req, res, next)=>{
     return res.render('error404',{
         title:'Page Not Found',
