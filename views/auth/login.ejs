@@ -1,9 +1,12 @@
 <%- include('../layout/head.ejs') %>
-    <% if (messages.error) { %>
-        <%= messages.error %> 
-    <% } %>
     <h1>Login</h1>
+    <div class="error-message-box" >
+        <% if (errorMessage) { %>
+            <p><%= errorMessage %></p>
+        <% } %>
+    </div>
     <form action="/login" method="post" >
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
         <input type="email" name="email" required placeholder="enter email address..." >
         <input type="password" name="password" required>
         <button type="submit">submit</button>

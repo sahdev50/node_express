@@ -1,3 +1,9 @@
 <%- include('../layout/head.ejs') %>
     <h1>Profile Page</h1>
+    <% if (successMessage) { %>
+        <div class="success-message-box" >
+            <p><%= successMessage %></p>
+        </div>
+    <% } %>
+    <p> <%= userInfo.email %>  </p>
 <%- include('../layout/tail.ejs') %> 

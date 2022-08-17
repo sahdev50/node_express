@@ -2,7 +2,7 @@ exports.getProfile = (req, res, next)=>{
     return res.render('pages/profile',{
         title:'Profile',
         path:'profile',
-        isLoggedIn:req.session.isLoggedIn
+        successMessage:req.flash('success')
     })
 }
 
@@ -10,14 +10,12 @@ exports.getAddCar = (req, res, next)=>{
     return res.render('pages/add-car',{
         title:'Add Car',
         path:'addcar',
-        isLoggedIn:req.session.isLoggedIn
     })
 }
 
 exports.getEditCar = (req, res, next)=>{
-    return res.render('pages/add-car',{
+    return res.render('pages/edit-car',{
         title:'Edit Car',
         path:'profile',
-        isLoggedIn:req.session.isLoggedIn
     })
 }

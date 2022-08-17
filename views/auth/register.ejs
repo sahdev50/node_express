@@ -1,8 +1,34 @@
 <%- include('../layout/head.ejs') %>
     <h1>Register</h1>
-    <form action="/register" method="post" >
-        <input type="email" name="email" required placeholder="enter email address..." >
-        <input type="password" name="password" required>
-        <button type="submit">submit</button>
+    <div class="error-message-box" >
+        <% if (errorMessage) { %>
+            <p><%= errorMessage %></p>
+        <% } %>
+    </div>
+    <form action="/register" method="post" class="register-form">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+        <div class="form-input">
+            <label for="first-name">First Name</label>
+            <input type="text" id="first-name" name="firstname" required placeholder="your first name..." >
+        </div>
+        <div class="form-input">
+            <label for="last-name">Last Name</label>
+            <input type="text" id="last-name" name="lastname" required placeholder="your last name..." >
+        </div>
+        <div class="form-input">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required placeholder="enter email address..." >
+        </div>
+        <div class="form-input">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required placeholder="password" >
+        </div>
+        <div class="form-input">
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirmpassword" required placeholder="confirm-password">
+        </div>
+        <div class="form-submit-btn" >
+            <button type="submit">submit</button>
+        </div>
     </form>
 <%- include('../layout/tail.ejs') %> 

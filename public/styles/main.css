@@ -1,3 +1,17 @@
+@font-face {
+    font-family: 'Akzidenz-grotesk-light';
+    src: url('../fonts/Akzidenz-Grotesk BQ Light.ttf') format('truetype');
+}
+
+:root{
+    --background:#8338ec;
+    --les-white:#edf6f9;
+    --blue:#3a86ff;
+    --pinkish:#ff006e;
+    --orangish:#fb5607;
+    --yelloish:#ffbe0b;
+}
+
 *{
     padding: 0;
     margin: 0;
@@ -6,6 +20,7 @@
 body{
     height: 100vh;
     width: 100vw;
+    font-family: 'Akzidenz-grotesk-light';
 }
 .main-container{
     width: 100%;
@@ -13,7 +28,7 @@ body{
 }
 /* nav bar styles */
 .nav-bar-container{
-    background-color: rgb(121, 8, 8);
+    background-color: var(--background);
     box-shadow: 0 0 10px -2px black;
     height: 10%;
     width: 100%;
@@ -26,31 +41,65 @@ body{
     align-items: center;
     margin:auto
 }
-.app-symbol{
-    width: 10%;
-}
 .links{
-    width: 90%;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.links div:last-child{
+.links div{
     display: flex;
 }
 .logout-btn{
-    margin-left: 1rem;
+    margin-left: 2rem;
+    outline: none;
+    background-color: var(--les-white);
+    color: var(--background);
+    font-size: 0.9rem;
+    border-radius: 4px;
+    border: 1px solid var(--les-white);
+    padding: 0.2rem 0.4rem;
+    cursor:pointer;
+    font-weight: 600;
 }
-.app-symbol a, .links a{
-    color: rgb(255, 255, 193);
+
+.links a{
+    color: var(--les-white);
     text-decoration: none;
 }
 .active-link{
-    background: green;
+    border-bottom: 2px solid var(--les-white) !important;
+    pointer-events: none;
+}
+.links div{
+    display: flex;
+    align-items: center;
+}
+.links div:first-child a{
+    margin-right: 2rem;
+}
+.links div:last-child a{
+    margin-left: 2rem;
 }
 .links a{
-    margin-left: 2rem;
     font-weight: 700;
+    position: relative;
+    display: block;
+    border-bottom: 2px solid transparent;
+}
+.links a::after{
+    content: '';
+    width: 0%;
+    display: block;
+    position: absolute;
+    bottom: -10%;
+    left: 0;
+    height: 1.5px;
+    transition: 0.2s all;
+    background-color: var(--les-white)
+}
+.links a:hover::after{
+    width: 100%;
 }
 /* page styles */
 .second-container{
