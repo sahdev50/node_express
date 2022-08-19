@@ -1,14 +1,24 @@
 <%- include('../layout/head.ejs') %>
-    <h1>Login</h1>
-    <div class="error-message-box" >
-        <% if (errorMessage) { %>
-            <p><%= errorMessage %></p>
-        <% } %>
+    <div class="login-page-container" >
+        <div class="login-form-container">
+            <h1>Sign - In</h1>
+            <div class="error-message-box" >
+                <% if (errorMessage) { %>
+                    <p><%= errorMessage %></p>
+                <% } %>
+            </div>
+            <form action="/login" method="post" >
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+                <div class="form-input">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email" required placeholder="enter email address..." >
+                </div>
+                <div class="form-input">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" required placeholder="password" >
+                </div>
+                <button type="submit" class="submit-btn" >submit</button>
+            </form>
+        </div>
     </div>
-    <form action="/login" method="post" >
-        <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
-        <input type="email" name="email" required placeholder="enter email address..." >
-        <input type="password" name="password" required>
-        <button type="submit">submit</button>
-    </form>
 <%- include('../layout/tail.ejs') %> 
