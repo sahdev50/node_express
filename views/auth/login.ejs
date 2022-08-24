@@ -7,7 +7,7 @@
                     <p><%= errorMessage %></p>
                 <% } %>
             </div>
-            <form action="/login" method="post" >
+            <form action="/login" method="post" class="login-form" >
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
                 <div class="form-input">
                     <label for="email">Email Address</label>

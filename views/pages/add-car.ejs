@@ -1,3 +1,41 @@
 <%- include('../layout/head.ejs') %>
-    <h1>Add Car Page</h1>
+<div class="add-car-page-container" >
+    <div class="add-car-fit-container">
+        <div class="add-car-form-container">
+            <h1>Add Electric Car</h1>
+            <form action="/addcar" method="post" class="add-car-form" >
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>" >
+                <div class="form-input">
+                    <label for="car-name">Car Name</label>
+                    <input type="text" id="car-name" name="carname" required placeholder="enter car name..." maxlength="25" minlength="3" >
+                </div>
+                <div class="form-input">
+                    <label for="manufacturer">Manufacturer</label>
+                    <input type="text" id="manufacturer" name="manufacturer" required placeholder="name of manufacturer..." maxlength="25" minlength="2" >
+                </div>
+                <div class="form-input">
+                    <label for="model-year">Model Year</label>
+                    <input type="number" id="model-year" name="modelyear" required placeholder="select model year..." min="1995" max="2022" step="1">
+                </div>
+                <div class="form-input">
+                    <label for="car-battery">Battery Size (Kwh)</label>
+                    <input type="number" step="0.01" min="17.6" max="118.0" name="carbattery" placeholder="select battery size..." id="car-battery" required>
+                </div>
+                <div class="form-input">
+                    <label for="car-WLTP-range">WLTP Range (km)</label>
+                    <input type="number" step="0.01" min="49.9" max="487.0" name="wltprange" placeholder="select Wltp range..." id="car-WLTP-range" required>
+                </div>
+                <div class="form-input">
+                    <label for="car-cost">Cost</label>
+                    <input type="number" step="0.01" min="24946.33" max="2900000.00" name="carcost" placeholder="select car cost..." id="car-cost" required>
+                </div>
+                <div class="form-input">
+                    <label for="car-power">Power (Kw) </label>
+                    <input type="number" step="1" min="110" max="595" name="carpower" placeholder="Enter car power..." id="car-power" required>
+                </div>
+                <button type="submit" class="submit-btn" >submit</button>
+            </form>
+        </div>
+    </div>
+</div>
 <%- include('../layout/tail.ejs') %> 
