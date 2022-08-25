@@ -6,4 +6,9 @@
         </div>
     <% } %>
     <p> <%= userInfo.email %>  </p>
+    <div>
+        <% cars.forEach(car => { %>
+            <p> <%= car.name %>  </p>
+        <% }) %>
+    </div>
 <%- include('../layout/tail.ejs') %> 

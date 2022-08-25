@@ -20,7 +20,7 @@ const UserSchema = new Schema({
         required:true
     },
     cars:{
-        type:[{type:ObjectId, ref:'Car'}],
+        type:[{ type : mongoose.Types.ObjectId, ref: 'Car' }],
     }
 })
 

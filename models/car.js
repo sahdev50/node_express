@@ -23,6 +23,10 @@ const carSchema = new Schema({
         type:Number,
         required:true
     },
+    carCost:{
+        type:Number,
+        required:true
+    },
     carPower:{
         type:Number,
         requierd:true
