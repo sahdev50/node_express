@@ -30,6 +30,10 @@ const carSchema = new Schema({
     carPower:{
         type:Number,
         requierd:true
+    },
+    carImage:{
+        type:String,
+        required:true
     }
 })
 

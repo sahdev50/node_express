@@ -9,6 +9,7 @@
     <div>
         <% cars.forEach(car => { %>
             <p> <%= car.name %>  </p>
+            <img src="<%= car.carImage %> " alt="" width="200" height="200" >
         <% }) %>
     </div>
 <%- include('../layout/tail.ejs') %> 

@@ -28,6 +28,7 @@ exports.postAddCar = (req, res, next)=>{
     const wltpRange = req.body.wltprange
     const carCost = req.body.carcost
     const carPower = req.body.carpower
+    const carImage = req.file
     const sessionUser = req.session.user
     User.findById(sessionUser._id).then(user=>{
         const car = new Car({
@@ -37,7 +38,8 @@ exports.postAddCar = (req, res, next)=>{
             batterySize:carBattery,
             wltpRange:wltpRange,
             carCost:carCost,
-            carPower:carPower
+            carPower:carPower,
+            carImage:carImage.path
         })
         car.save().then(carr=>{
             user.cars.push(carr._id)
