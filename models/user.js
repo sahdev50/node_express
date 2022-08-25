@@ -20,7 +20,7 @@ const UserSchema = new Schema({
         required:true
     },
     cars:{
-        type:[],
+        type:[{type:ObjectId, ref:'Car'}],
     }
 })
 
