@@ -76,7 +76,6 @@ body{
 }
 .active-link{
     border-bottom: 2px solid var(--les-white) !important;
-    pointer-events: none;
 }
 .links div{
     display: flex;

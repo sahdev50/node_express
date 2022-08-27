@@ -16,9 +16,6 @@
                         <a href="/" class="<%= path === 'home' ? 'active-link' : '' %>" >Home</a>
                         <a href="/cars" class="<%= path === 'cars' ? 'active-link' : '' %>" >Cars</a>
                         <a href="/compare" class="<%= path === 'compare' ? 'active-link' : '' %>" >Compare</a>
-                        <% if (isLoggedIn) { %>
-                            <a href="/addcar" class="<%= path === 'addcar' ? 'active-link' : '' %>" >Add-Car</a>
-                        <% } %>
                     </div>
                     <% if (!isLoggedIn) { %>
                         <div>

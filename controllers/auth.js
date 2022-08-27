@@ -1,7 +1,9 @@
 const bcrypt = require('bcrypt')
-const { redirect } = require('express/lib/response')
+const random = require('random')
 
 const User = require('../models/user')
+
+const imgData = require('../data/prof-imgs')
 
 exports.getRegister = (req, res, next)=>{
     return res.render('auth/register',{
@@ -17,6 +19,9 @@ exports.postRegister = async(req, res, next)=>{
     const email = req.body.email
     const password = req.body.password
     const confirmPassword = req.body.confirmpassword
+    // profile image
+    const randomNum = random.int(0,14)
+    const profImg = imgData[randomNum]
     if (password !== confirmPassword){
         req.flash('error','passwords not matched, please try again!')
         return res.redirect('/register')
@@ -31,7 +36,8 @@ exports.postRegister = async(req, res, next)=>{
             firstname:fname,
             lastname:lname,
             email:email,
-            password:hashedPassword
+            password:hashedPassword,
+            profimg:profImg
         })
         return user.save().then((userSaved)=>{
             return res.redirect('/login')

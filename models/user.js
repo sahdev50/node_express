@@ -21,6 +21,10 @@ const UserSchema = new Schema({
     },
     cars:{
         type:[{ type : mongoose.Types.ObjectId, ref: 'Car' }],
+    },
+    profimg:{
+        type:String,
+        require:true
     }
 })
 

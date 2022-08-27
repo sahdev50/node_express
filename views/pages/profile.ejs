@@ -1,15 +1,29 @@
 <%- include('../layout/head.ejs') %>
-    <h1>Profile Page</h1>
     <% if (successMessage) { %>
-        <div class="success-message-box" >
+        <div class="success-message-box">
             <p><%= successMessage %></p>
         </div>
     <% } %>
-    <p> <%= userInfo.email %>  </p>
-    <div>
+    <div class="user-info-box">
+        <div class="user-info-left" >
+            <img src=" <%= userInfo.profimg %>  " alt="" width="60" height="60" >
+            <div>
+                <h2><%= userInfo.firstname %> <%= userInfo.lastname %></h2>
+                <p><%= userInfo.email %></p>
+            </div>
+        </div>
+        <div class="user-info-right" >
+            <a href="/addcar">Add Car</a>
+        </div>
+    </div>
+    <div class="car-card-container">
         <% cars.forEach(car => { %>
-            <p> <%= car.name %>  </p>
-            <img src="<%= car.carImage %> " alt="" width="200" height="200" >
+            <a href="#">
+                <div class="car-card" >
+                    <p> <%= car.name %>  </p>
+                    <img src="<%= car.carImage %>" alt="" width="200" height="200" >
+                </div>
+            </a>
         <% }) %>
     </div>
 <%- include('../layout/tail.ejs') %> 

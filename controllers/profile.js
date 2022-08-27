@@ -16,7 +16,7 @@ exports.getProfile = (req, res, next)=>{
 exports.getAddCar = (req, res, next)=>{
     return res.render('pages/add-car',{
         title:'Add Car',
-        path:'addcar',
+        path:'profile',
     })
 }
 
