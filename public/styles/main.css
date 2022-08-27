@@ -5,9 +5,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root{
-    --background:#8338ec;
+    --background:#3a86ff;
     --les-white:#edf6f9;
-    --blue:#3a86ff;
+    --blue:#8338ec;
     --pinkish:#ff006e;
     --orangish:#fb5607;
     --yelloish:#ffbe0b;
@@ -29,7 +29,7 @@ body{
 }
 /* nav bar styles */
 .nav-bar-container{
-    background-color: var(--background);
+    background:linear-gradient(45deg, var(--background), #1966e3);
     box-shadow: 0 0 10px -2px black;
     height: 10%;
     width: 100%;
@@ -308,7 +308,7 @@ body{
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 4px 4px 10px -3px rgb(0, 0, 0);
-    transition: 0.13s;
+    transition: 0.12s;
 }
 .car-card:hover{
     top: -2px;
@@ -367,12 +367,12 @@ body{
     border-radius: 8px;
 }
 .btn-bluish{
-    background-color: var(--blue);
-    color: var(--les-white);
+    background-color: #fff;
+    color: var(--blue);
     border: 2px solid var(--blue);
     transition: all 0.12s;
 }
 .btn-bluish:hover{
-    background-color: white;
-    color: var(--blue);
+    background-color: var(--blue);
+    color: var(--les-white);
 }
