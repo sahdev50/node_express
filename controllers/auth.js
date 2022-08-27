@@ -5,6 +5,8 @@ const User = require('../models/user')
 
 const imgData = require('../data/prof-imgs')
 
+console.log(imgData.length)
+
 exports.getRegister = (req, res, next)=>{
     return res.render('auth/register',{
         title:'Register',

@@ -2,6 +2,7 @@
     font-family: 'Akzidenz-grotesk-light';
     src: url('../fonts/Akzidenz-Grotesk BQ Light.ttf') format('truetype');
 }
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root{
     --background:#8338ec;
@@ -20,7 +21,7 @@
 body{
     height: 100vh;
     width: 100vw;
-    font-family: 'Akzidenz-grotesk-light';
+    font-family: 'Poppins', sans-serif;
 }
 .main-container{
     width: 100%;
@@ -32,6 +33,7 @@ body{
     box-shadow: 0 0 10px -2px black;
     height: 10%;
     width: 100%;
+    font-family: 'Akzidenz-grotesk-light';
 }
 .nav-bar{
     width: 80%;
@@ -245,4 +247,132 @@ body{
     align-items: center;
     flex-direction: column;
     margin: 0.5rem 0;
+}
+/* Profile styling */
+.user-info-box{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    border-bottom: 2px solid rgba(51, 51, 51, 0.8);
+    margin-bottom: 0.5rem;
+}
+.user-info-left, .user-info-right{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+.user-info-left img{
+    width: 75px;
+    height: 75px;
+    border-radius: 50%;
+    margin-right: 0.5rem;
+    margin-left: 0.3rem;
+    border: 1px solid rgba(62, 62, 62, 0.296);
+    box-shadow: 0 0 10px -4px black;
+}
+.user-info-left div p{
+    font-weight: 600;
+    color: gray;
+}
+.user-info-right{
+    justify-content: flex-end;
+}
+.car-card-main-container{
+    width: 100%;
+    height: 85%;
+}
+.car-card-main-container .car-card-title{
+    height: 7%;
+    width: 100%;
+    text-align: center;
+}
+.car-card-container{
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+    grid-auto-rows: 200px;
+    grid-gap: 1rem;
+    height: max-content;
+    padding: 0.5rem 0;
+}
+.car-card-container a{
+    text-decoration: none;
+}
+.car-card{
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 1;
+    top: 0;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 4px 4px 10px -3px rgb(0, 0, 0);
+    transition: 0.13s;
+}
+.car-card:hover{
+    top: -2px;
+    box-shadow: 8px 8px 15px 1px rgba(0, 0, 0, 0.599);
+}
+.car-card:hover .car-info{
+    background-color: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(0);
+}
+.car-info{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(1px);
+    padding: 1rem;
+    display: flex;
+    justify-content: end;
+    align-items: flex-start;
+    flex-direction: column;
+    transition: 0.12s all;
+}
+.car-info h3{
+    color: var(--les-white);
+}
+.car-info p{
+    color: rgb(217, 216, 216);
+}
+.car-card img{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+.null-container{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(210, 210, 210);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+}
+.null-container h2{
+    font-weight: 900;
+    font-size: 2.5rem;
+    line-height: 2.3rem;
+    color: gray;
+}
+/* btn stylings */
+.btn{
+    padding: 0.5rem 1.2rem;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+}
+.btn-bluish{
+    background-color: var(--blue);
+    color: var(--les-white);
+    border: 2px solid var(--blue);
+    transition: all 0.12s;
+}
+.btn-bluish:hover{
+    background-color: white;
+    color: var(--blue);
 }
