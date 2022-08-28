@@ -61,3 +61,10 @@ exports.getEditCar = (req, res, next)=>{
         path:'profile',
     })
 }
+
+exports.getUserSingleCarPage = (req, res, next)=>{
+    return res.render('pages/usercar', {
+        title:'e-car',
+        path:'profile'
+    })
+}

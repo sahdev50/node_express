@@ -23,7 +23,7 @@
             </div>
             <div class="car-card-container">
                 <% cars.forEach(car => { %>
-                    <a href="#">
+                    <a href="/profile/<%= car._id %>">
                         <div class="car-card" >
                             <div class="car-info">
                                 <h3> <%= car.name %>  </h3>
