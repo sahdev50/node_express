@@ -63,8 +63,14 @@ exports.getEditCar = (req, res, next)=>{
 }
 
 exports.getUserSingleCarPage = (req, res, next)=>{
-    return res.render('pages/usercar', {
-        title:'e-car',
-        path:'profile'
+    const carId = req.params.carId
+    Car.findById(carId).then(car=>{
+        return res.render('pages/usercar', {
+            title:'e-car',
+            path:'profile',
+            car:car
+        })
+    }).catch(err=>{
+        console.log(err)
     })
 }
