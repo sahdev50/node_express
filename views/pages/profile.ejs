@@ -28,6 +28,13 @@
                             <div class="car-info">
                                 <h3> <%= car.name %>  </h3>
                                 <p> <%= car.manufacturer %>  </p>
+                                <div class="delete-img-form">
+                                    <form action="/delete-car" method="post">
+                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                        <input type="hidden" name="carId" value="<%= car._id %>" >
+                                        <button type="submit"><i class="fa-solid fa-xmark"></i></button>
+                                    </form>
+                                </div>
                             </div>
                             <img src="<%= car.carImage %>" alt="" width="200" height="200" >
                         </div>

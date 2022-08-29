@@ -1,6 +1,9 @@
 const Car = require('../models/car')
 const User = require('../models/user')
 
+// fileHelper
+const fileHelper = require('../utils/fileHelper')
+
 exports.getProfile = (req, res, next)=>{
     const sessionUser = req.session.user
     User.findById(sessionUser._id).populate('cars').exec((err, user)=>{
@@ -69,6 +72,31 @@ exports.getUserSingleCarPage = (req, res, next)=>{
             title:'e-car',
             path:'profile',
             car:car
+        })
+    }).catch(err=>{
+        console.log(err)
+    })
+}
+
+exports.postDeleteCar = (req, res, next)=>{
+    const carId = req.body.carId
+    Car.findById(carId).then(car=>{
+        fileHelper.deleteFile(car.carImage)
+        User.findById(req.session.user._id).then(user=>{
+            const cars = user.cars
+            const index = cars.indexOf(car._id);
+            if (index > -1) { 
+                cars.splice(index, 1);
+            }
+            const update={
+                cars:cars
+            }
+            User.findByIdAndUpdate(req.session.user._id, update).then(result=>{}).catch(err=>console.log(err))
+        })
+        Car.findByIdAndRemove(carId).then(result=>{
+            return res.redirect('/profile')
+        }).catch(err=>{
+            console.log(err)
         })
     }).catch(err=>{
         console.log(err)
