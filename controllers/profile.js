@@ -59,9 +59,62 @@ exports.postAddCar = (req, res, next)=>{
 }
 
 exports.getEditCar = (req, res, next)=>{
-    return res.render('pages/edit-car',{
-        title:'Edit Car',
-        path:'profile',
+    const carId = req.params.carId
+    Car.findById(carId).then(car=>{
+        return res.render('pages/edit-car',{
+            title:'Edit Car',
+            path:'profile',
+            car:car
+        })
+    }).catch(err=>{
+        console.log(err)
+    })
+}
+
+exports.postEditCar = (req, res, next)=>{
+    const carId = req.body.carId
+    const carName = req.body.carname
+    const manufacturer = req.body.manufacturer
+    const modelYear = req.body.modelyear
+    const carBattery = req.body.carbattery
+    const wltpRange = req.body.wltprange
+    const carCost = req.body.carcost
+    const carPower = req.body.carpower
+    const carImage = req.file
+    Car.findById(carId).then(car=>{
+        let update = {}
+        if(carImage){
+            fileHelper.deleteFile(car.carImage)
+            update = {
+                name:carName,
+                manufacturer:manufacturer,
+                modelYear:modelYear,
+                batterySize:carBattery,
+                wltpRange:wltpRange,
+                carCost:carCost,
+                carPower:carPower,
+                carImage:carImage.path
+            }
+        }
+        else{
+            update = {
+                name:carName,
+                manufacturer:manufacturer,
+                modelYear:modelYear,
+                batterySize:carBattery,
+                wltpRange:wltpRange,
+                carCost:carCost,
+                carPower:carPower,
+                carImage:car.carImage
+            }
+        }
+        Car.findByIdAndUpdate(carId, update).then(result=>{
+            return res.redirect(`/profile/${carId}`)
+        }).catch(err=>{
+            console.log(err)
+        })
+    }).catch(err=>{
+        console.log(err)
     })
 }
 
@@ -69,7 +122,7 @@ exports.getUserSingleCarPage = (req, res, next)=>{
     const carId = req.params.carId
     Car.findById(carId).then(car=>{
         return res.render('pages/usercar', {
-            title:'e-car',
+            title:'E-Car',
             path:'profile',
             car:car
         })

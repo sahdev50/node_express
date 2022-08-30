@@ -54,7 +54,7 @@ const csrfToken = csrf()
 app.set('view engine', 'ejs')
 
 app.use(express.static(path.join(__dirname,'public')))
-app.use('/uploads', express.static('uploads'))
+app.use('/uploads', express.static(path.join(__dirname,'uploads')))
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(session({
     secret:process.env.SESSION_SECRET,
