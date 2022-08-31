@@ -264,6 +264,33 @@ body{
     flex-direction: column;
     margin: 0.5rem 0;
 }
+.form-car-image{
+    width: 80%;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    height: 100px;
+    background-color: #dcc0ff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.form-car-image img{
+    width: 50%;
+    height: 100%;
+    box-shadow: 0 0 8px var(--blue);
+    border-radius: 4px;
+}
+.form-car-image div{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--blue);
+    font-weight: 600;
+    flex-direction: column;
+}
 
 /* Profile styling */
 .user-info-box{
@@ -387,35 +414,27 @@ body{
     position: absolute;
     top: -2.5%;
     right: -2.5%;
-    width: 30px;
-    height: 30px;
-    transition: 0.12s;
 }
 .delete-img-form button{
     width: 30px;
     height: 30px;
-    border-radius: 50%;
-    border: 2px solid var(--red);
-    background-color: var(--les-white);
+    border-radius: 20px;
+    background-color: var(--red);
+    border: none;
     cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     transition: 0.12s;
-    transform: scale(1);
 }
 .delete-img-form button:hover{
-    background-color: var(--red);
-    transform: scale(1.01);
+    background-color: #d72237;
 }
 .delete-img-form button i{
-    transform: scale(1.5);
-    color: var(--red);
-    transition: 0.25s;
-}
-.delete-img-form button:hover i{
     color: var(--les-white);
+    transform: scale(1.5);
 }
+
 
 /* btn stylings */
 .btn{

@@ -39,7 +39,11 @@
                     <input type="file" name="carimage" id="car-image" accept="image/png, image/jpg, image/jpeg">
                 </div>
                 <div class="form-car-image">
-                    <img src="<%= car.carImage %>" alt="" width="200" height="200" >
+                    <img src="/<%= car.carImage %>" alt="">
+                    <div>
+                        <p>Previous</p>
+                        <p>Image</p>
+                    </div>
                 </div>
                 <button type="submit" class="submit-btn" >submit</button>
             </form>
