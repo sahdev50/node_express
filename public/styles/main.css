@@ -434,22 +434,114 @@ body{
     color: var(--les-white);
     transform: scale(1.5);
 }
-
-
 /* btn stylings */
 .btn{
     padding: 0.5rem 1.2rem;
     text-decoration: none;
     font-weight: 600;
     border-radius: 8px;
+    display: inline-block;
+    background-color: #fff;
+    transition: all 0.12s;
 }
 .btn-bluish{
-    background-color: #fff;
     color: var(--blue);
     border: 2px solid var(--blue);
-    transition: all 0.12s;
 }
 .btn-bluish:hover{
     background-color: var(--blue);
     color: var(--les-white);
+}
+.btn-yelloish{
+    color: var(--yelloish);
+    border: 2px solid var(--yelloish);
+}
+.btn-yelloish:hover{
+    background-color: var(--yelloish);
+    color: var(--les-white);
+}
+
+/* single car page styles */
+.single-car-page{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.car-name-box{
+    width: 100%;
+    height: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.car-name-box div:first-child{
+    width: 70%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding-left: 1.5rem;
+    border-bottom: 2px dashed black;
+}
+.car-name-box div:first-child h4{
+    color: #666;
+}
+.car-name-box div:last-child{
+    width: 30%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-end;
+    margin-left: 2px;
+    border-bottom: 2px dashed black;
+}
+.content-container{
+    display: flex;
+    width: 100%;
+    height: 85%;
+    margin-top: 1rem;
+}
+.content-container .first-half, .content-container .second-half{
+    width: 50%;
+    height: 100%;
+}
+.first-half{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    border-right: 1px solid rgba(150, 150, 150, 0.508);
+}
+.first-half img{
+    width: 97%;
+    height: 97%;
+    border-radius: 10px;
+}
+.second-half{
+    padding-left: 0.5rem;
+}
+.second-half div{
+    width: 100%;
+    margin-top: 0.5rem;
+    display: flex;
+    margin-bottom: 0.7rem;
+}
+.single-car-info-box{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+    padding: 0.5rem;
+}
+.colored-box{
+    background-color: rgb(210, 210, 210);
+    border-radius: 4px;
+    padding: 1rem 0.5rem;
+}
+.outlined-box{
+    border-radius: 4px;
+    padding: 1rem 0.5rem;
+    border: 1px solid rgba(187, 187, 187, 0.599);
 }
