@@ -34,6 +34,8 @@ exports.postAddCar = (req, res, next)=>{
     const carImage = req.file
     const sessionUser = req.session.user
     User.findById(sessionUser._id).then(user=>{
+        const name = user.firstname+" "+user.lastname
+        console.log(name)
         const car = new Car({
             name:carName,
             manufacturer:manufacturer,
@@ -43,7 +45,7 @@ exports.postAddCar = (req, res, next)=>{
             carCost:carCost,
             carPower:carPower,
             carImage:carImage.path,
-            addedBy:user.name,
+            addedBy:name,
             userId:user._id
         })
         car.save().then(carr=>{
