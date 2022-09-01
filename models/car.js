@@ -34,7 +34,13 @@ const carSchema = new Schema({
     carImage:{
         type:String,
         required:true
-    }
+    },
+    addedBy:{
+        type:String,
+        required:true
+    },
+    userId:{type:mongoose.Types.ObjectId,
+    ref:'User'}
 })
 
 module.exports = mongoose.model('Car', carSchema)

@@ -42,7 +42,9 @@ exports.postAddCar = (req, res, next)=>{
             wltpRange:wltpRange,
             carCost:carCost,
             carPower:carPower,
-            carImage:carImage.path
+            carImage:carImage.path,
+            addedBy:user.name,
+            userId:user._id
         })
         car.save().then(carr=>{
             user.cars.push(carr._id)

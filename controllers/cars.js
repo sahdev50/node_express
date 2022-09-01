@@ -1,3 +1,5 @@
+const Car = require('../models/car')
+
 exports.getCars = (req, res, next)=>{
     return res.render('pages/cars',{
         title:'Cars',
