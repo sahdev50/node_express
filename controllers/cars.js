@@ -1,3 +1,4 @@
+const car = require('../models/car')
 const Car = require('../models/car')
 
 exports.getCars = (req, res, next)=>{
@@ -7,6 +8,19 @@ exports.getCars = (req, res, next)=>{
             title:'Cars',
             path:'cars',
             cars:cars
+        })
+    }).catch(err=>{
+        console.log(err)
+    })
+}
+
+exports.getSingleCar = (req, res, next)=>{
+    const carId = req.params.carId
+    Car.findById(carId).then(car=>{
+        return res.render('pages/singlecar', {
+            title:'E-Car',
+            path:'cars',
+            car:car
         })
     }).catch(err=>{
         console.log(err)

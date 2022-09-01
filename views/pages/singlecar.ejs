@@ -1,0 +1,49 @@
+<%- include('../layout/head.ejs') %>
+    <div class="single-car-page" >
+        <div class="car-name-box" >
+            <div>
+                <h1><%= car.name %>  </h1>
+                <h4><%= car.manufacturer %></h4>
+            </div>
+            <div>
+                <a href="/cars"><-- Go Back</a>
+                <p>Added By : <%= car.addedBy %> </p>
+            </div>
+        </div>
+        <div class="content-container" >
+            <div class="first-half" >
+                <img src="/<%= car.carImage %> " alt="" width="250" height="250">
+            </div>
+            <div class="second-half" >
+                <div>
+                    <div class="single-car-info-box outlined-box">
+                        <h3> Model Year </h3>
+                        <p><%= car.modelYear %> (year) </p>
+                    </div>
+                    <div class="single-car-info-box outlined-box">
+                        <h3> Battery Size </h3>
+                        <p><%= car.batterySize %> (mAH) </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="single-car-info-box colored-box">
+                        <h3> WLTP Range </h3>
+                        <p><%= car.wltpRange %> (km) </p>
+                    </div>
+                    <div class="single-car-info-box colored-box">
+                        <h3> Cost </h3>
+                        <p>£ <%= car.carCost %> </p>
+                    </div>
+                </div>
+                <div>
+                    <div class="single-car-info-box outlined-box">
+                        <h3> Power </h3>
+                        <p><%= car.carPower %> (Kw/h) </p>
+                    </div>
+                    <div class="single-car-info-box">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<%- include('../layout/tail.ejs') %>

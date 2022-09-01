@@ -1,3 +1,30 @@
 <%- include('../layout/head.ejs') %>
-    <h1>Cars Page</h1>
+<% if (cars.length > 0) { %>
+    <div class="car-card-main-container">
+        <div class="car-card-title" >
+            <h2>All Cars</h2>
+        </div>
+        <div class="scroll-container" >
+        <div class="car-card-container">
+            <% cars.forEach(car => { %>
+                <a href="/cars/<%= car._id %>">
+                    <div class="car-card" >
+                        <div class="car-info">
+                            <h3> <%= car.name %>  </h3>
+                            <p> <%= car.manufacturer %>  </p>
+                            <p>Added By : <%= car.addedBy %> </p>
+                        </div>
+                        <img src="<%= car.carImage %>" alt="" width="200" height="200" >
+                    </div>
+                </a>
+            <% }) %>
+        </div>
+    </div>
+    </div>
+<% } else { %>
+    <div class="null-container">
+        <h2>No Cars To</h2>
+        <h2>Show</h2>
+    </div>
+<% } %>
 <%- include('../layout/tail.ejs') %> 
