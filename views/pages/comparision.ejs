@@ -1,0 +1,43 @@
+<%- include('../layout/head.ejs') %>
+<div class="comparision-div">
+    <h1>Comparision</h1>
+    <table >
+        <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Model Year</th>
+            <th>Battery Size (mAh) </th>
+            <th>WLTP Range (kms) </th>
+            <th>Car Price (£ - euros) </th>
+            <th>Power</th>
+        </tr>
+        <% cars.forEach((car, index) => { %>
+            <tr>
+                <td><%= index+1 %></td>
+                <td><%= car.name %></td>
+                <td><%= car.modelYear %></td>
+                <% if (minbSize === car.batterySize) { %>
+                    <td class="comparision-bg-bad" ><%= car.batterySize %></td>
+                <% } else { %>
+                    <td class="<%= maxbSize === car.batterySize ? 'comparision-bg-good' : '' %>"> <%= car.batterySize %>  </td>
+                <% } %> 
+                <% if (maxRange === car.wltpRange) { %>
+                    <td class="comparision-bg-bad" ><%= car.wltpRange %></td>
+                <% } else { %>
+                    <td class="<%= minRange === car.wltpRange ? 'comparision-bg-good' : '' %>"> <%= car.wltpRange %>  </td>
+                <% } %>
+                <% if (maxCost === car.carCost) { %>
+                    <td class="comparision-bg-bad" ><%= car.carCost %></td>
+                <% } else { %>
+                    <td class="<%= minCost === car.carCost ? 'comparision-bg-good' : '' %>"> <%= car.carCost %>  </td>
+                <% } %>
+                <% if (minPower === car.carPower) { %>
+                    <td class="comparision-bg-bad" ><%= car.carPower %></td>
+                <% } else { %>
+                    <td class="<%= maxPower === car.carPower ? 'comparision-bg-good' : '' %>"> <%= car.carPower %>  </td>
+                <% } %>
+            <tr>
+        <% }) %>
+    </table>
+</div>
+<%- include('../layout/tail.ejs') %>
